@@ -1,0 +1,147 @@
+.red {
+    background: red;
+}
+.app__todo--content::-webkit-scrollbar {
+    display: none;
+}
+.app__todo {
+    border-radius: 4px;
+    background: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.app__todo--content>div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    gap : 10px;
+}
+.app__todo--content {
+   
+    position: relative;
+    
+    overflow-y: auto;
+    max-height: 400px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+   
+    gap : 15px;
+    flex-direction: column;
+    &-item {
+
+        &-icon {
+            display: none;
+        }
+        @extend .flex-align-center-between;
+        &:hover {
+            .app__todo--content-item-icon {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+
+            border : 2px solid red;
+        }
+        height: 50px;
+        padding : 10px 10px;
+        border-radius: 3px;
+        box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.63);
+        background: white;
+        cursor: move;
+    }
+    &-form {
+        padding : 10px;
+        &-btn {
+            cursor: pointer;
+            color : white;
+            padding : 7px;
+            border-radius: 4px;
+            &:hover {
+                background: red;
+                color : white;
+            }
+            @extend .flex-content-start;
+            gap : 10px;
+        }
+    }
+    
+}
+.app__todo--title {
+    font-size: 20px;
+    color : white;
+    padding : 10px 20px 0px 20px;
+}
+.app__popup--container {
+  
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    
+   border-radius: 4px;
+    padding: 20px;
+    span {
+        color : red;
+    }
+}
+.app__popup--content {
+    margin-top: 10px;
+    &-form-item {
+      width: 100%;
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        gap : 10px;
+    }
+}
+.app__todo--content-form-add {
+    span {
+        color : red;
+    }
+    color : white;
+    &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap : 10px;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.app__todo--content-form-btns {
+    background: white;
+    border-radius: 6px;
+    padding : 10px;
+}
+.app__popup--content-form-item {
+    input[type="date"] {
+        border : 1px solid #adabab;
+        border-radius: 4px;
+        outline: none;
+        padding : 10px;
+    }
+    textarea {
+        border : 1px solid #adabab;
+        border-radius: 4px;
+        outline: none;
+        padding : 10px;
+    }
+    display: flex;
+    flex-direction: column;
+}
+.app__popup--content-form-item-delete {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+
+.app__todo--content-item-hidden {
+//    visibility: hidden !important;
+//   height: 400px !important;
+
+}
